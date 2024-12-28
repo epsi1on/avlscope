@@ -1,0 +1,3 @@
+[submodule "Software/AvlScope/SharpFFTW"]
+	path = Software/AvlScope/SharpFFTW
+	url = https://github.com/epsi1on/SharpFFTW.git

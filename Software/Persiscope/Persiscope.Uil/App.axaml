@@ -1,0 +1,21 @@
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Persiscope.Uil.App"
+             xmlns:avaloniaMiaDev="clr-namespace:Persiscope.Uil"
+             RequestedThemeVariant="Light">
+
+    <Application.DataTemplates>
+        <avaloniaMiaDev:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <ClassicTheme />
+		<!-- <FluentTheme /> -->
+		
+		<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" /> 
+		
+        <StyleInclude Source="avares://Persiscope.Uil/Assets/Icons.axaml" />
+        <StyleInclude Source="avares://Persiscope.Uil/Templates/ContentExample.axaml" />
+		
+    </Application.Styles>
+</Application>

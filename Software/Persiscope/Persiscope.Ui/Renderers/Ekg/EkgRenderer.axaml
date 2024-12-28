@@ -1,0 +1,23 @@
+<BaseFpsRender xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			   xmlns:local="clr-namespace:AvlScope.Ui.Renderers.Ekg"
+			   x:DataType="local:EkgContextClass"
+             x:Class="AvlScope.Ui.EkgRenderer">
+
+	<Grid>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="663*"/>
+			<ColumnDefinition Width="100"/>
+		</Grid.ColumnDefinitions>
+
+		<Border Grid.Column="0"  BorderBrush="Black" CornerRadius="5" BorderThickness="2" SizeChanged="image_SizeChanged" >
+			<Image Source="{Binding Bitmap}" Name="image"/>
+		</Border>
+
+	</Grid>
+	
+</BaseFpsRender>

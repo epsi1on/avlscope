@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="Persiscope.Uil.ViewModels"
+			 xmlns:converters="using:Persiscope.Uil.Converters"
+			 
+             x:Class="Persiscope.Uil.ConnectionView">
+
+
+	<UserControl.Resources>
+		<converters:Cnt2NameConverter x:Key="cnv" />
+		<converters:BaseConnectManager2Control  x:Key="CtrlCnv"/>
+		<converters:BooleanNotConverter  x:Key="bool2Not"/>
+	</UserControl.Resources>
+
+	<Grid>
+
+
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="30"/>
+	    </Grid.RowDefinitions>
+		
+
+
+		<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" MaxHeight="30">
+
+			<TextBlock Text="Select the Hardware"/>
+			
+			<ComboBox 
+				ItemsSource="{Binding AvailableConnectionManagers}"
+				SelectedItem="{Binding SelectedConnectionManager}"
+				Width="400" HorizontalAlignment="Left" >
+
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<Border Margin="0,0,0,0"
+							CornerRadius="5"
+							BorderBrush="Gray" BorderThickness="01"
+							Padding="1">
+							<StackPanel Orientation="Horizontal">
+
+								<TextBlock Text="{Binding, Converter={StaticResource cnv}}"/>
+								<TextBlock Margin="5 0" FontWeight="Bold" Text="{Binding Number}"/>
+
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+
+			</ComboBox>
+			
+		</StackPanel>
+
+		<TextBlock Grid.Row="1"
+			Text="{Binding SelectedConnectionManagerDescription}"/>
+
+		
+		<ContentControl
+			Margin="10"
+			Grid.Row="2"
+			Content="{Binding SelectedConnectionManagerControl, FallbackValue=CONTROL}"
+			IsEnabled="{Binding IsConnected, Converter={StaticResource bool2Not}}"/>
+
+		<StackPanel HorizontalAlignment="Left" 
+					MaxHeight="30" DockPanel.Dock="Bottom" 
+					Grid.Row="3" Orientation="Horizontal">
+			
+			<Button Content="Connect" Command="{Binding ConnectCommand}" IsEnabled="{Binding IsConnected, Converter={StaticResource bool2Not}}"/>
+			<Button Content="Dis Connect" Command="{Binding DisConnectCommand}" IsEnabled="{Binding IsConnected}"/>
+			
+		</StackPanel>
+
+
+
+	</Grid>
+
+</UserControl>

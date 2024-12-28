@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Persiscope.Uil</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Remove="ViewModels\Renderers\**" />
+    <AvaloniaXaml Remove="Views\Renderers\**" />
+    <Compile Remove="ViewModels\Renderers\**" />
+    <Compile Remove="Views\Renderers\**" />
+    <EmbeddedResource Remove="ViewModels\Renderers\**" />
+    <EmbeddedResource Remove="Views\Renderers\**" />
+    <None Remove="ViewModels\Renderers\**" />
+    <None Remove="Views\Renderers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Remove="Assets\Icons.axaml" />
+    <AvaloniaXaml Remove="Templates\ContentExample.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\avalonia-logo.ico" />
+    <None Remove="Assets\logo_big_no_bg.ico" />
+    <None Remove="Assets\logo_big_no_bg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\avalonia-logo.ico" />
+    <AvaloniaResource Include="Assets\Icons.axaml" />
+    <AvaloniaResource Include="Assets\logo_big_no_bg.ico" />
+    <AvaloniaResource Include="Assets\logo_big_no_bg.png" />
+    <AvaloniaResource Include="Templates\ContentExample.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Skia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
+    <PackageReference Include="Classic.Avalonia.Theme" Version="11.2.0.6" />
+    <PackageReference Include="CommunityToolkit.Labs.Extensions.DependencyInjection" Version="0.0.1" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0-preview3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Persiscope.Common\Persiscope.Common.csproj" />
+    <ProjectReference Include="..\Persiscope.Lib\Persiscope.Lib.csproj" />
+    <ProjectReference Include="..\Persiscope.UiHardware\Persiscope.UiHardware.csproj" />
+    <ProjectReference Include="..\Persiscope.Uil.Common\Persiscope.Uil.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Etc\AppSettings.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ConnectView.axaml.cs">
+      <DependentUpon>ConnectView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Connect.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Etc\AppSettings.axaml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>

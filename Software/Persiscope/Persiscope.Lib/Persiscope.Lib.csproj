@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net8.0;</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Persiscope.Common\Persiscope.Common.csproj" />
+    <ProjectReference Include="..\Persiscope.Hardware\Persiscope.Hardware.csproj" />
+    <ProjectReference Include="..\SharpFFTW\SharpFFTW\SharpFFTW.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Hardwares\" />
+  </ItemGroup>
+
+</Project>

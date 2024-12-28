@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Persiscope.Uil.AboutView">
+	<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal">
+			<TextBlock Text="{Binding AppName, FallbackValue=AVL Scope}" />
+			<TextBlock Text="" />
+			<TextBlock Text="{Binding Ver, FallbackValue=123}" Opacity="0.5" Grid.Row="1"/>
+			<TextBlock Text=" - " />
+			<TextBlock Text="{Binding VerPrefix, FallbackValue=Beta}" Opacity="0.5" Grid.Row="1"/>
+		</StackPanel>
+		<TextBlock Text="{Binding Description}" Grid.Row="2"/>
+		<TextBlock Text="Dependencies" Grid.Row="3"/>
+
+		<ItemsControl Grid.Row="4" ItemsSource="{Binding Dependencies}" Margin="20,0,0,0">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Text="{Binding Title}"/>
+						<Button IsEnabled="True" Content="Link" Command="{Binding UrlLink}" CommandParameter="{Binding}"/>
+						<TextBlock Text="{Binding ShortDesc}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+		
+	</Grid>
+</UserControl>

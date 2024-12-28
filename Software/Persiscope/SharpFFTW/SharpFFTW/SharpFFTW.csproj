@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>SharpFFTW</PackageId>
+    <Summary>SharpFFTW - A lightweight wrapper for native FFTW.</Summary>
+    <Description>SharpFFTW provides lighweight .NET interop for the native fast fourier transform library FFTW.</Description>
+    <Product>SharpFFTW</Product>
+    <Company />
+    <Copyright>Copyright Christian Woltering © 2022</Copyright>
+    <Authors>Christian Woltering</Authors>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <PackageTags>fft fftw fourier transform </PackageTags>
+    <Version>1.2.0</Version>
+    <AssemblyName>SharpFFTW</AssemblyName>
+    <RootNamespace>SharpFFTW</RootNamespace>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/wo80/SharpFFTW</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/wo80/SharpFFTW</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Platforms>AnyCPU;x64</Platforms>
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="NativeBinariesX64\libfftw3-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinariesX64\libfftw3f-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinariesX64\libfftw3l-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinariesX86\libfftw3-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinariesX86\libfftw3f-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinariesX86\libfftw3l-3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinaries\libfftw3-3.x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinaries\libfftw3-3.x86.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinaries\libfftw3f-3.x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinaries\libfftw3f-3.x86.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinaries\libfftw3l-3.x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NativeBinaries\libfftw3l-3.x86.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

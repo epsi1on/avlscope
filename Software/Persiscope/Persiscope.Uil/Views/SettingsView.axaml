@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vms="using:Persiscope.Uil.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Persiscope.Uil.SettingsView">
+
+
+	<Design.DataContext>
+		<vms:SettingsViewModel/>
+	</Design.DataContext>	
+	
+	
+	<ItemsControl ItemsSource="{Binding Channels}">
+
+		<ItemsControl.ItemsPanel>
+			<ItemsPanelTemplate>
+				<WrapPanel/>
+			</ItemsPanelTemplate>
+		</ItemsControl.ItemsPanel>
+		
+		<ItemsControl.ItemTemplate>
+			<DataTemplate>
+
+				<Border MinWidth="100" MinHeight="100" Background="Gray" Margin="20" CornerRadius="10" BorderBrush="LightGray" BorderThickness="2">
+					<Grid  Margin="10" >
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="30"/>
+							<RowDefinition Height="30"/>
+							<RowDefinition Height="30"/>
+						</Grid.RowDefinitions>
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="auto"/>
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+
+						<TextBlock Text="ID:" Grid.Row="0" Grid.Column="0"/>
+						<TextBlock Text="{Binding Id}" Grid.Row="0" Grid.Column="1"/>
+
+						<TextBlock Text="Color:" Grid.Row="1" Grid.Column="1"/>
+						<ColorPicker Color="{Binding Color}" Grid.Row="1" Grid.Column="0"/>
+
+
+						<CheckBox IsChecked="{Binding Enabled}" Content="Enabled" Grid.Row="2" Grid.ColumnSpan="2"/>
+					</Grid>
+				</Border>
+				
+
+			</DataTemplate>
+		</ItemsControl.ItemTemplate>
+	</ItemsControl>
+</UserControl>

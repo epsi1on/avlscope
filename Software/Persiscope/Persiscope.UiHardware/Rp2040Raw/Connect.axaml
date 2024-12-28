@@ -1,0 +1,70 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Persiscope.UiHardware.Rp2040Raw.Connect">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="23*"/>
+			<ColumnDefinition Width="57*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="30"/>
+		</Grid.RowDefinitions>
+
+
+		<TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+				   Text =""/>
+		
+		<TextBlock Text="COM port" Grid.Row="1"/>
+		<TextBlock Text="Sample Rate" Grid.Row="2"/>
+
+		<TextBlock Text="Bit Width" Grid.Row="3"/>
+
+
+		<TextBlock Text="Channel 26 [?]" ToolTip.Tip="ADC Channel on GPIO 26" Grid.Row="4"/>
+		<TextBlock Text="Channel 27" ToolTip.Tip="ADC Channel on GPIO 27" Grid.Row="5"/>
+		<TextBlock Text="Channel 28" ToolTip.Tip="ADC Channel on GPIO 28" Grid.Row="6"/>
+		<TextBlock Text="Channel REF" ToolTip.Tip="ADC Channel on VREF" Grid.Row="7"/>
+		<TextBlock Text="Channel Temprature" ToolTip.Tip="ADC Channel on RP2040 internal Temprature sensor" Grid.Row="8"/>
+		
+		
+		<TextBlock Text="Record Depth (seconds)" Grid.Row="9"/>
+
+
+		<TextBox Text="{Binding SampleRate, FallbackValue=SPS}" Grid.Row="2" Grid.Column="1"/>
+
+		<TextBox Text="{Binding BitWidth, FallbackValue=BW}" Grid.Row="3" Grid.Column="1"/>
+
+		<StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" Orientation="Horizontal"  VerticalAlignment="Center" IsEnabled="{Binding IsNotConnected}">
+			<Button Content="⟳" Click="BtnRefreshPorts_Click"/>
+			<ComboBox ItemsSource="{Binding AvailablePorts}" SelectedItem="{Binding SelectedPort}" Width="100" />
+		</StackPanel>
+
+
+		<CheckBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Gpio26Enabled}"/>
+		<CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Gpio27Enabled}"/>
+		<CheckBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Gpio28Enabled}"/>
+		<CheckBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding InternalReferenceEnabled}"/>
+		<CheckBox Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding InternalTempSensorEnabled}"/>
+
+
+		<TextBox Text="{Binding RecordDepthSecs, FallbackValue=RD}" Grid.Row="9" Grid.Column="1"/>
+
+		
+		
+	</Grid>
+</UserControl>

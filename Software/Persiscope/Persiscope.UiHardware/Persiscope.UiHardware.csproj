@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Rp2040Raw\Rp2DaqMchInterfaceUi.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Persiscope.Common\Persiscope.Common.csproj" />
+    <ProjectReference Include="..\Persiscope.Hardware\Persiscope.Hardware.csproj" />
+    <ProjectReference Include="..\Persiscope.Lib\Persiscope.Lib.csproj" />
+    <ProjectReference Include="..\Persiscope.Uil.Common\Persiscope.Uil.Common.csproj" />
+  </ItemGroup>
+
+</Project>
