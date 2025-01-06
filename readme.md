@@ -1,6 +1,6 @@
 # Persi Scope
 Cross platform software defined osciloscope which uses multy layer software architecture.
-Only tested on windows, but could be compiled for other platforms like Linux, MAC an wathever platform that AvaloniaUI  supports (like Android etc.)
+Only tested and compiled on windows, but could be compiled for other platforms like Linux, MAC an wathever platform that AvaloniaUI  supports (like Android etc.)
 
 # Architecture
 
