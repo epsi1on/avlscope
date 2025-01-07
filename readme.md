@@ -18,3 +18,14 @@ The code architecture is based on MVVM with AvaloniaUI.
 # How to build
 
 Install visual studio 2022, follow [this](https://docs.avaloniaui.net/docs/get-started/install-the-avalonia-extension) to install avalonia extensions on visual studio, and there should be no problem to compile the code.
+
+# Screenshots
+
+![FFT](/Docs/screenshots/prealpha/fft.png)
+
+
+![About](/Docs/screenshots/prealpha/about.png)
+
+
+![Connect](/Docs/screenshots/prealpha/connect.png)
+
