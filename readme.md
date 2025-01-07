@@ -21,6 +21,8 @@ Install visual studio 2022, follow [this](https://docs.avaloniaui.net/docs/get-s
 
 # Screenshots
 
+The software is under development, currently have a windows 95 theme!
+
 ![FFT](/Docs/screenshots/prealpha/fft.png)
 
 
