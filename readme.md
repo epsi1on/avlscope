@@ -14,6 +14,7 @@ SharpFFTW is used for FFT operation in this layer.
 ## GUI Layer
 Code for visualizing the stored data goes here.
 The code architecture is based on MVVM with AvaloniaUI.
+Capable of having arbitrary number of probes.
 
 # How to build
 
